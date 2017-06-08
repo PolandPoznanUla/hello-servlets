@@ -30,7 +30,7 @@ public class HelloServlet extends HttpServlet {
         Map<String, String[]> parameters = req.getParameterMap();
         String firstValue = parameters.get("first")[0];
         String secondValue = parameters.get("second")[0];
-        double result =0;
+        double result = 0;
 
         if ("/add".equals(action)) {
             result = calculator.add(Double.parseDouble(firstValue), Double.parseDouble(secondValue));
@@ -80,22 +80,22 @@ public class HelloServlet extends HttpServlet {
     }
 
     private void addResponse(PrintWriter writer) {
-        writer.println("<form method=\"get\" action=\"/hello-servlets-1.0-SNAPSHOT/add\">");
+        writer.println("<form method=\"get\" action=\"/hello-servlets-1.0-SNAPSHOT/calc/add\">");
         writer.println("<input type=\"number\" name=\"first\">");
         writer.println("<input type=\"number\" name=\"second\">");
         writer.println("<input type=\"submit\">");
         writer.println("</form>");
-        writer.println("<form method=\"get\" action=\"/hello-servlets-1.0-SNAPSHOT/subtract\">");
+        writer.println("<form method=\"get\" action=\"/hello-servlets-1.0-SNAPSHOT/calc/subtract\">");
         writer.println("<input type=\"number\" name=\"first\">");
         writer.println("<input type=\"number\" name=\"second\">");
         writer.println("<input type=\"submit\">");
         writer.println("</form>");
-        writer.println("<form method=\"get\" action=\"/hello-servlets-1.0-SNAPSHOT/multiply\">");
+        writer.println("<form method=\"get\" action=\"/hello-servlets-1.0-SNAPSHOT/calc/multiply\">");
         writer.println("<input type=\"number\" name=\"first\">");
         writer.println("<input type=\"number\" name=\"second\">");
         writer.println("<input type=\"submit\">");
         writer.println("</form>");
-        writer.println("<form method=\"get\" action=\"/hello-servlets-1.0-SNAPSHOT/divide\">");
+        writer.println("<form method=\"get\" action=\"/hello-servlets-1.0-SNAPSHOT/calc/divide\">");
         writer.println("<input type=\"number\" name=\"first\">");
         writer.println("<input type=\"number\" name=\"second\">");
         writer.println("<input type=\"submit\">");
