@@ -17,10 +17,14 @@ public class ToDoServlet extends HttpServlet {
 
     private ToDoDao toDoDao;
 
+    private ToDoView toDoView;
+
     @Override
     public void init() throws ServletException {
         toDoDao = new ToDoDaoMock();
+        toDoView = new ToDoViewHtml();
     }
+
 
 
 
@@ -29,6 +33,7 @@ public class ToDoServlet extends HttpServlet {
         PrintWriter writer = resp.getWriter();
         resp.setContentType("text/html");
         List<ToDoModel> allToDOs = toDoDao.getAllToDOs();
+        String toDosView = toDoView.show(allToDOs);
         writer.println("<ul>");
 
         for(ToDoModel model : allToDOs) {

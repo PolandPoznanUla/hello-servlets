@@ -14,10 +14,7 @@ public class ToDoViewHtml implements ToDoView {
       todos.stream()
               .map(e -> show(e))
               .forEach(e -> stringBuilder.append(e));
-//        for (ToDoModel todo : todos) {
-//            stringBuilder.append(show(todo));
-//        }
-//        stringBuilder.append("</ol>");
+
         return stringBuilder.toString();
     }
 
@@ -34,5 +31,6 @@ public class ToDoViewHtml implements ToDoView {
         }
         stringBuilder.append("</p>\n");
         stringBuilder.append("</li>\n");
+        return stringBuilder.toString();
     }
 }
